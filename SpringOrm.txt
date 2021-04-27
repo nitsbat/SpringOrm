@@ -1,0 +1,24 @@
+Spring ORM is another ORM tool which combines with JPA specification or API ORM tools like hibernate and provides us easy execution of db queries.
+
+Intro - https://www.youtube.com/watch?v=f_13gnGU_n8&list=PL0zysOflRCekeiERASkpi-crREVensZGS&index=42
+
+Advantages of Spring ORM
+
+1) Less Code to write
+2) Easy To Test.
+3) Exception handling
+
+
+In ORM approach what we actually do is like for every table or enitity , we have to make a class with member variables as
+column name, then ORM will map these variables to the column value. We just need to make ORM that this class should be mapped 
+to this table.
+
+In spring ORM we have HibernateTemplate Class which have all the CRUD methods (save,update,insert,get), it provides
+all the functionality to perform CRUD operations in database. So we need object of HibernateTemplate.
+
+To get the HibernateTemplate object we have to get it from the SessionFactory which is an interface and we will take
+its implementation from LocalSessionFactoryBean class.
+Now when we make the LocalSessionFactoryBean object we need to give three things, 
+first is the DataSource which is the
+databse properties, second is the Hibernate properties like cache,ddl-auto property ; 
+and the third property will be Annotated classes (like mapping classes with @Entity annotation)
