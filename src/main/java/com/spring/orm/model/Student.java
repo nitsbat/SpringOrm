@@ -3,11 +3,11 @@ package com.spring.orm.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "student_details")
 public class Student {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int studentId;
 
     @Column(name = "name")
@@ -15,8 +15,18 @@ public class Student {
 
     @Column(name = "city")
     private String city;
-    
+
     private int age;
+
+    public Student() {
+    }
+
+    public Student(int id, String studentName, String city, int age) {
+        this.studentId = id;
+        this.studentName = studentName;
+        this.city = city;
+        this.age = age;
+    }
 
     public int getStudentId() {
         return studentId;
