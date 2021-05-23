@@ -25,7 +25,7 @@ public class Application {
 
         /* Delete and select all query
         studentDao.delete(3498);
-        List<Student> studentList = studentDao.getData();
+        List<Student> studentList = studentDao.getData();ll
         studentList.forEach(student -> System.out.println(student));
         */
 

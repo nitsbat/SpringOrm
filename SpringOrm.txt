@@ -31,3 +31,21 @@ inject transactional logic before and after the running method, mainly for start
 
 Basically transaction is used for insert or update the data, so in CRUD operations for reading the data there is no nedd
 of giving @Transactional above the read method.
+
+
+Basics of Transaction in Database
+It is a single unit of work which actually modifies or access the data in the database. It ensures to prevent the data
+inconsistency and
+Lets take an example. Suppose there is a database which stores two tables : first is passenger info and second is
+payment info.
+Now what happens is that for every passenger there is a requirement that the payment info related to it must also get
+committed but suppose there is a scenario like when we are persisting the passenger info no problem is occurred but while
+persisiting/commiting the payment info the process thrown as error and hence no record is inserted related to payment info.
+At this point we have no use with the corresponding passenger data with no payment info and hence it would be great to
+avoid persisitng that also. As a result we don't want the passenger info also.
+Hence to avoid data inconsistency we use transactions which will allow the commit of all the work in a single unit. It it
+is aborted in between any process then there will be a rollback happen. Here the error could be like the payment should be greater than
+some value otherwise it will throw an Exception.
+In spring JPA it is handled by @Transactional annotation.
+
+To know how to use @Transaction watch this video - https://www.youtube.com/watch?v=95kxPSbHzVg
